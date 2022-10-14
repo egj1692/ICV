@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def ex1():
-    img = cv.imread('assignment_1/Lena.png')
+    img = cv.imread('Lena.png')
     img_r = img[:, :, 0]
     print(img.shape)
 
@@ -31,7 +31,7 @@ def ex1():
 
     plt.show()
 def ex2():
-    image = cv.imread('assignment_1/image_House256rgb.png').astype(np.float32) / 255
+    image = cv.imread('image_House256rgb.png').astype(np.float32) / 255
     print(image.shape)
 
     noised = (image + 50 * np.random.rand(*image.shape).astype(np.float32) / 255)
@@ -73,7 +73,7 @@ def ex2():
 
     plt.show()
 def ex3():
-    image = cv.imread('assignment_1/image_Peppers512rgb.png', 0).astype(np.float32) / 255
+    image = cv.imread('image_Peppers512rgb.png', 0).astype(np.float32) / 255
     fft = cv.dft(image, flags=cv.DFT_COMPLEX_OUTPUT)
 
     shifted = np.fft.fftshift(fft, axes=[0, 1])
@@ -110,7 +110,7 @@ def ex3():
     plt.show()
 
 def ex4():
-    image = cv.imread('assignment_1/image_House256rgb.png', 0)
+    image = cv.imread('image_House256rgb.png', 0)
 
     _, binary = cv.threshold(image, 150, 1, cv.THRESH_BINARY)
     plt.subplot(121)
